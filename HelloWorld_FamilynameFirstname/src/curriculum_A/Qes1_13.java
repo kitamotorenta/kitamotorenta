@@ -39,10 +39,9 @@ public class Qes1_13 {
 		// 文字型
 		c = '\u0000';
 		// 文字列型
-		str =  null;
+		str = null;
 		// ブーリアン型
 		bo = false;
-
 
 		// 問3
 		// バイト型
@@ -100,7 +99,7 @@ public class Qes1_13 {
 		// 変数に代入
 		old = 18;
 		// 変数に代入
-		height = 170.5f;	
+		height = 170.5f;
 		// 変数に代入
 		weight = 62.2d;
 		// 変数に代入
@@ -110,35 +109,33 @@ public class Qes1_13 {
 		System.out.println("\r\n");
 		System.out.println("「初めまして" + name + "です」");
 		System.out.println("「年齢は" + old + "歳です」");
-		System.out.println("「身長は"+ height + "cmです」");
+		System.out.println("「身長は" + height + "cmです」");
 		System.out.println("「体重は" + weight + "kgです」");
 		System.out.println("「好きな食べ物は" + favorite + "です」");
 
 		// 問７ 問6で作成した自己紹介に続いてBMIが出力されるようにしてください
 		String bmi = String.format("%.1f", weight / ((height / 100) * (height / 100)));
-		System.out.println("「BMIは" +bmi + "です」");
+		System.out.println("「BMIは" + bmi + "です」");
 
 		// 問８ 宣言した変数に再代入し下記の通りにコンソールに出力してください
 		// 変数に代入
-		name= "鈴木一郎";
+		name = "鈴木一郎";
 		// 変数に代入
-		old= 24;
+		old = 24;
 		// 変数に代入
-		height= 168.5f;
+		height = 168.5f;
 		// 変数に代入
-		weight= 64.2d;
+		weight = 64.2d;
 		// 変数に代入
-		favorite= "オムライス";
+		favorite = "オムライス";
 		// 変数に代入
 		bmi = String.format("%.1f", weight / ((height / 100) * (height / 100)));
-
-
 
 		// コンソールに出力
 		System.out.println("\r\n");
 		System.out.println("「初めまして" + name + "です」");
 		System.out.println("「年齢は" + old + "歳です」");
-		System.out.println("「身長は"+ height + "cmです」");
+		System.out.println("「身長は" + height + "cmです」");
 		System.out.println("「体重は" + weight + "kgです」");
 		System.out.println("「好きな食べ物は" + favorite + "です」");
 		System.out.println("「BMIは" + bmi + "です」");
@@ -147,53 +144,65 @@ public class Qes1_13 {
 
 		// 変数に代入
 		String bmith = String.format("%.2f", weight / ((height / 100) * (height / 100)) / 2);
+		// 年齢を和算で自己代入
+		old += 24;
+		//　身長を和算で自己代入
+		height += 168.5;
+		// 体重を和算で自己代入
+		weight += 64.2;
 		// コンソールに出力
 		System.out.println("\r\n");
 		System.out.println("「初めまして" + name + "です」");
-		System.out.println("「年齢は" +( old + old) + "歳です」");
-		System.out.println("「身長は"+ (height + height) + "cmです」");
-		System.out.println("「体重は" + (weight + weight) + "kgです」");
+		System.out.println("「年齢は" + (old) + "歳です」");
+		System.out.println("「身長は" + (height) + "cmです」");
+		System.out.println("「体重は" + (weight) + "kgです」");
 		System.out.println("「好きな食べ物は" + favorite + "です」");
 		System.out.println("「BMIは" + bmith + "です」");
 
 		// 問10 8で使用した年齢が25歳以上ならtrueが出力されるようにしてください。ただしif文は使いません
+		
+		// 問８で使用した年齢に直す
+		old = 24;
+		// 問８で使用した身長に直す
+		height = 168.5f;
+		// 問８で使用した年齢に直す
+		weight = 64.2d;
+		// 年齢が25歳以上ならtrueが出力されるようにする
 		boolean terms = true;
-		terms = old>= 25;
+		terms = old >= 25;
 		// コンソールに出力する処理
 		System.out.println("\r\n");
 		System.out.println(terms);
 
-		// 問11　問8で使用した【年齢・身長・体重】を文字列型に型変換し出力してください
+		// 問11 問8で使用した【年齢・身長・体重】を文字列型に型変換し出力してください
 		// 過去の年齢
-		String oldth = Integer.toString(old);
+		String oldst = Integer.toString(old);
 		// 過去の身長
-		String heightth = Float.toString(height);
+		String heightst = Float.toString(height);
 		// 過去の体重
-		String weightth = Double.toString(weight);
+		String weightst = Double.toString(weight);
 
 		// コンソールに出力
 		System.out.println("\r\n");
-		System.out.println(oldth + heightth + weightth);
+		System.out.println(oldst + heightst + weightst);
 
 		// 問12　問11で変換した【年齢・身長】を整数型に変換して出力してください
 		// 文字列型から整数型に変換
-		int oldint = Integer.parseInt(oldth);
+		int oldint = Integer.parseInt(oldst);
 		// 文字列型から整数型に変換
-		int heightint = Integer.parseInt(heightth);
+		int heightint = (int) Double.parseDouble(heightst);
 
 		// コンソールに出力
 		System.out.println("\r\n");
 		System.out.println(oldint + heightint);
 
-
 		// 問13　問12で変換した【年齢・身長】で【年齢が25もしくは身長が160以上】であればtrueを出力してください
 
-		boolean over = (oldint == 25 ) || (heightint >= 160);
+		boolean over = (oldint == 25) || (heightint >= 160);
 
 		// コンソールに出力
 		System.out.println("\r\n");
 		System.out.println((over) + "\n");
-
 
 	}
 }
