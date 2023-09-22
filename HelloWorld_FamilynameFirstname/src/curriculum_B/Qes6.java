@@ -14,16 +14,18 @@ public class Qes6 {
 		String kaden[] = date.split("、");
 		//ランダム変数rにランダムな数字を代入
 		Random r = new Random();
+
 		//for_Eachを使用
 		for (String Kaden : kaden) {
 			//flagを初期化
 			boolean flag = false;
-			
+
 			//変数rを代入
 			int nokoriKaden = r.nextInt(11);
 			//swich文を使用
 			//各カテゴリのcaseを作成
 			switch (Kaden) {
+
 			case "パソコン":
 				System.out.println("パソコンの残り台数は" + nokoriKaden + "台です");
 				break;
@@ -42,7 +44,7 @@ public class Qes6 {
 			case "テレビ":
 				flag = true;
 			case "ディスプレイ":
-				System.out.println((flag) ? "テレビの残り台数は" + (11 - nokoriKaden) + "台です"
+				System.out.println((flag) ? "テレビの残り台数は" + nokoriKaden + "台です"
 						: "ディスプレイの残り台数は" + (11 - nokoriKaden) + "台です");
 				break;
 			default:
@@ -50,6 +52,7 @@ public class Qes6 {
 				break;
 			}
 		}
+		scan.close();
 	}
 
 }

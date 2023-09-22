@@ -95,6 +95,8 @@ public class Qes7 {
 		System.out.println("理科の平均点は" + (String.format("%.2f", aveScience)) + "点です。");
 		System.out.println("社会の平均点は" + (String.format("%.2f", aveSociety)) + "点です。");
 		System.out.println("全体の平均点は" + (String.format("%.2f", allAve)) + "点です。");
+		scan.close();
 	}
+	
 
 }

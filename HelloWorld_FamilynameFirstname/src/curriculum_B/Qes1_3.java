@@ -3,16 +3,20 @@ package curriculum_B;
 import java.util.Objects;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Qes1_3 {
 
+	@SuppressWarnings("resource")
 	public static void main(String[] args) {
 
 		// 問1 ログイン時の入力チェックシステムを下記条件で作成してください					
 
 		//プレイヤーネーム入力
 		Scanner scan = new Scanner(System.in);
-		String str = scan.next();
+		String str = scan.nextLine();
+		
 
 		// ・ユーザー名の文字数が10文字より大きい場合「名前を10文字以内にしてください」と出力してください		
 
@@ -31,10 +35,19 @@ public class Qes1_3 {
 
 		// 問2 ユーザー名が半角英数字以外の場合「半角英数字のみで名前を入力してください」と出力してください	
 		//ユーザー名が半角英数字以外の場合「半角英数字のみで名前を入力してください」と出力
-		if (str.matches("[^a-z0-9]+")) {
+		
+		Pattern pattern = Pattern.compile("^[0-9a-zA-Z]+$");
+		Matcher matcher = pattern.matcher(str);
+		if (matcher.find()) {
+			
+		}else {
 			System.out.println("「半角英数字のみで入力してください」");
 			return;
 		}
+		/*if (str.matches("[^0-9a-zA-Z]+$")) {
+			System.out.println("「半角英数字のみで入力してください」");
+			return;
+		}*/
 		// ユーザー名が正常な値だった場合「ユーザー名「 入力したユーザー名 」を登録しました」と出力してください	
 		//ユーザー名が正常な値だった場合「ユーザー名「 入力したユーザー名 」を登録しました」と出力
 		if (10 > str.length()) {
@@ -93,14 +106,13 @@ public class Qes1_3 {
 
 		//winflagがtrueになるまで繰り返し処理
 		while (winflag == false) {
+
 			
 			//自分の手を入力
-			Scanner mysele_scan = new Scanner(System.in);
+			//Scanner mysele_scan = new Scanner(System.in);
 			//選択したmysele_scanをmyseleに代入
-			int mysele = mysele_scan.nextInt();
-			//前回のスキャン処理をリセットする処理
-			mysele_scan.reset();
-
+			int mysele = scan.nextInt();
+			
 			//myseleを表示
 			System.out.println(mysele);
 			//myselectにmyseleに代入
@@ -171,16 +183,16 @@ public class Qes1_3 {
 			//負けた場合の処理
 			if (myselect == 2 && enemyselect == 1) {
 				System.out.println("「俺の勝ち、なんで負けたか、明日までに考えといてください。そしたら何かが見えてくるはずです」");
-			} 
+			}
 			//winflagがtrueになったら勝つまでのtry回数を表示
 			if (winflag == true) {
 				System.out.println("勝つまでにかかった合計回数は" + trycnt + "回です。");
-			}else {
+				scan.close();
+			} else {
 				//winfalgがfalseならtrycntに＋１する
-			trycnt = trycnt + 1;
+				trycnt = trycnt + 1;
 			}
 		}
-
+		
 	}
-
 }
