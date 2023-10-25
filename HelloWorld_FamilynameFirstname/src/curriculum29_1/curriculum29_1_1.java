@@ -30,20 +30,38 @@ public class curriculum29_1_1 {
 		};
 		// 入力を受け取る
 		Scanner scan = new Scanner(System.in);
+
 		// 都道府県の番号:と出力
 		System.out.println("都道府県の番号:");
 
-		// 入力された文字列をinputに格納
-		String input = scan.nextLine();
+		// 変数宣言
+		String input = null;
+
+		// 空白の場合ループ
+		for (int j = 0; j < 1;) {
+			input = scan.nextLine();
+
+			if (input == null || input.isEmpty()) {
+				System.out.println("もう一度入力してください");
+
+			} else {
+				j++;
+			}
+		}
+
 		// 入力された文字列をカンマで区切り、indexStrings配列に格納
 		String[] indexStrings = input.split(",");
+
 		// 都道府県番号を格納する配列を格納
 		int[] indices = new int[indexStrings.length];
+
 		// indexStrings配列をループ
 		for (int i = 0; i < indexStrings.length; i++) {
 			// 文字列から整数に変換し、indices配列に格納
 			indices[i] = Integer.parseInt(indexStrings[i].trim());
+
 		}
+
 		// 昇順 or 降順:を出力
 		System.out.println("昇順 or 降順:");
 		// ユーザーが入力した選択を読み取り、sortOrderInput変数に格納
