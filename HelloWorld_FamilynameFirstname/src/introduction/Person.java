@@ -21,18 +21,21 @@ class Person {
 
 	}
 
+	// bmiメソッドを作成
 	public double bmi() {
 		double bmi = this.weight / (this.height * this.height);
-		System.out.println("BMIは" + Math.floor(bmi) + "です");
 		return bmi;
 
 	}
 
+	// printメソッドを作成
 	public void print() {
 		System.out.println("名前は" + this.name + "です");
 		System.out.println("年は" + this.age + "才です");
+		System.out.println("BMIは" + Math.floor(bmi()) + "です");
 	}
 
+	// printCountを作成
 	public static void printCount() {
 		System.out.println("合計" + Person.count + "人です");
 	}
